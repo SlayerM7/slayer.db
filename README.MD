@@ -19,7 +19,7 @@ const { slayersDB } = require("slayer.db");
 
 // Create a new instance of the database
 
-const data = new slayersDB();
+const data = new slayersDB({ options });
 ```
 
 **Save**
@@ -169,6 +169,33 @@ data.random() -> // Returns an Interger , String, Array
 // Required the data.keys() method
 
 data.randomKey() -> // Returns an Interger , String, Array
+```
+
+**to JSON**
+
+```js
+// Returns all data in JSON format
+
+data.toJSON({options}) -> // Returns a Object
+```
+
+**Options**
+
+_DB create_
+
+```js
+new slayersDB({
+  saveOnSet: true, // This will auto save when ever ".set" is used
+  // BE CAREFUL of this option, It is not recommended
+});
+```
+
+_to JSON_
+
+```js
+data.toJson({
+  straight: true, // This will format the way it is returned
+});
 ```
 
 # Slayers Economy
